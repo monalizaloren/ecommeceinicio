@@ -5,6 +5,8 @@ import Woman from '../src/woman (1).png';
 import Man from '../src/man.png';
 import Kids from '../src/kids.png';
 import Shoe from '../src/shoe.png';
+import Cart from './cart';
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 function App() {
 //
@@ -30,13 +32,18 @@ const crescerfun=()=>{
 }
   return (
     <div className="App">
-      <Menu>
-
-      </Menu>
-      <div className="cabeçalho"> 
-      <h1>Nossos Produtos</h1>
-     
+    <Router>
+      <div>
+        <Link to="/cart">
+          <button>Clique</button>
+        </Link>
+        <Route component={Cart} path="/cart" />
       </div>
+    </Router>
+    <Menu />
+    <div className="cabeçalho">
+      <h1>Nossos Produtos</h1>
+    </div>
       
 <div className="caixas">
   <div className="guardar">
